@@ -521,3 +521,60 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+$autoload['helper'] = array('form');
+
+//project config
+$config['contact_email'] = 'kr-info@issiloo.edu.vn';
+$config['protocol'] = 'sendmail';
+$config['charset'] = 'utf-8';
+$config['mailtype'] = 'html';
+$config['wordwrap'] = TRUE;
+
+//HARDCODE
+$config['homepage_widget_news'] = array(11,21,14); //du hoc han quoc | hoc bong | hoc tieng han (trung tam han ngu)
+$config['homepage'] = array(10,7,14); //du hoc han quoc | hoc bong | hoc tieng han (trung tam han ngu)
+$config['news_and_event'] = 7;
+$config['faq'] = 19;
+$config['introduce'] = 1;
+$config['hoc_bong'] = 8;
+$config['tuyen_dung'] = 51;
+//
+$config['duhochanquoc'] = 10;
+
+$config['duhoctieng'] = 11;
+$config['baiviet_duhoctieng'] = 172;
+$config['duhocnganh'] = 58;
+$config['baiviet_duhocnganh'] = 173;
+$config['duhocnghe'] = 59;
+$config['baiviet_duhocnghe'] = 174;
+$config['baiviet_duhoc'] = array(172, 173, 174);
+$config['cat_duhoc'] = array(11, 58, 59);
+
+$config['gocchiase'] = 60;
+$config['studyabroad'] = 72;
+$config['univers'] = 71;
+//
+$config['daotaohanngu'] = 14;
+$config['chuongtrinhdaotao'] = 15;
+$config['thoikhoabieu'] = 16;
+$config['gochoctap'] = 46;
+$config['defaultbanner'] = 'defaultbanner';
+//chuong trinh dao tao
+$config['tienghansocap'] = 61;
+$config['baiviet_tienghansocap'] = 176;
+$config['tienghantrungcap'] = 62;
+$config['baiviet_tienghantrungcap'] = 177;
+$config['luyenthitopik'] = 63;
+$config['baiviet_luyenthitopik'] = 178;
+$config['luyenthiklat'] = 67;
+$config['baiviet_luyenthiklat'] = 183;
+$config['luyenthieps'] = 68;
+$config['baiviet_luyenthieps'] = 184;
+$config['luyenthieps'] = 68;
+$config['baiviet_luyenthieps'] = 184;
+$config['daotaodoanhnghiep'] = 70;
+$config['baiviet_daotaodoanhnghiep'] = 199;
+$config['lichkhaigiang'] = 65;
+$config['baiviet_lichkhaigiang'] = 180;
+
+$config['cat_chuongtrinhdaotao'] = array(61,62,63,67,68,70);
