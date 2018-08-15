@@ -1,0 +1,27 @@
+
+/* Slider */
+.slick-loading .slick-list {}
+/* Arrows */
+.slick-prev, .slick-next { font-size: 0; line-height: 0; position: absolute; top: 50%; display: block; width: 20px; height: 50px; margin-top: -25px; padding: 0; cursor: pointer; color: transparent; border: none; outline: none; background: transparent;   z-index:99;}
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus { color: transparent; outline: none; background: transparent; }
+.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before { opacity: 1; }
+.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before { opacity: .25; }
+.slick-prev:before, .slick-next:before { font-family:"Ionicons"; font-size: 50px; line-height: 1; opacity: 1; color: #666; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.slick-prev { left: 10px; }
+[dir='rtl'] .slick-prev { right: 25px; left: auto; }
+.slick-prev:before { content:"\f3d2";  }
+[dir='rtl'] .slick-prev:before { content:"\f3d2";}
+.slick-next { right: 10px; }
+[dir='rtl'] .slick-next { right: auto; left: 25px; }
+.slick-next:before { content:"\f3d3";}
+[dir='rtl'] .slick-next:before { content:"\f3d3"; }
+/* Dots */
+.slick-slider { }
+.inner-dots .slick-dots {bottom:15px;}
+.slick-dots { position: absolute; bottom: -40px; display: block; width: 100%; padding: 0; list-style: none; text-align: center; }
+.slick-dots li { position: relative; display: inline-block; width: 20px; height: 20px; margin: 0 2px; padding: 0; cursor: pointer; }
+.slick-dots li span { font-size: 0; line-height: 0; display: block; width: 20px; height: 20px; padding: 5px; cursor: pointer; color: transparent; border: 0; outline: none; background: transparent; }
+.slick-dots li span:hover, .slick-dots li span:focus { outline: none; }
+.slick-dots li span:hover:before, .slick-dots li span:focus:before { opacity: 1; }
+.slick-dots li span:before { font-family: 'Ionicons'; font-size: 14px; line-height: 20px; width:20px; position: absolute; top: 0; left: 0; content: "\f3a7"; text-align: center; opacity: .4; color: #222; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.slick-dots li.slick-active span:before { opacity: .75;  }

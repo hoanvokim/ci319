@@ -1,302 +1,299 @@
-;(function($){
-    "use strict"
-    var nav_offset_top = $('.header_area').height()+50; 
-    /*-------------------------------------------------------------------------------
-	  Navbar 
-	-------------------------------------------------------------------------------*/
+$(window).load(function () {
+    $("#loading").fadeOut();
+})
 
-	//* Navbar Fixed  
-    function navbarFixed(){
-        if ( $('.header_area').length ){ 
-            $(window).scroll(function() {
-                var scroll = $(window).scrollTop();   
-                if (scroll >= nav_offset_top ) {
-                    $(".header_area").addClass("navbar_fixed");
-                } else {
-                    $(".header_area").removeClass("navbar_fixed");
+$(document).ready(function ($) {
+
+    /*==========================*/
+    /* Nav */
+    /*==========================*/
+    $('.nav-menu-icon a').on('click', function () {
+        if ($('nav').hasClass('slide-menu')) {
+            $('nav').removeClass('slide-menu');
+            $(this).removeClass('active');
+        } else {
+            $('nav').addClass('slide-menu');
+            $(this).addClass('active');
+        }
+        return false;
+    });
+
+    /*==========================*/
+    /* feature box same height */
+    /*==========================*/
+    var maxHeight = 0;
+    $(function () {
+
+
+        $(".feature-box.slick-slide").each(function () {
+            if ($(this).height() > maxHeight) {
+                maxHeight = $(this).height();
+            }
+        });
+
+        $(".feature-box.slick-slide").height(maxHeight);
+
+    });
+
+    /*==========================*/
+    /* Tooltip */
+    /*==========================*/
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
+    /*==========================*/
+    /* Masonry */
+    /*==========================*/
+    $(function () {
+        var self = $("#masonry");
+
+        self.imagesLoaded(function () {
+            self.masonry({
+                gutterWidth: 15,
+                isAnimated: true,
+                itemSelector: ".grid-item"
+            });
+        });
+
+        $("ul.project-category li a").click(function (e) {
+            e.preventDefault();
+            $('ul.project-category li a').removeClass('active');
+            $(this).addClass('active');
+            var filter = $(this).attr("data-filter");
+
+            self.masonryFilter({
+                filter: function () {
+                    if (!filter) return true;
+                    return $(this).attr("data-filter") == filter;
                 }
             });
-        };
-    };
-    navbarFixed();
-    
-    function testimonialSlider(){
-        if ( $('.testimonial_slider').length ){
-            $('.testimonial_slider').owlCarousel({
-                loop:true,
-                margin: 30,
-                items: 2,
-                nav:false,
-                autoplay: true,
-                dots: true,
-                smartSpeed: 1500,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    768: {
-                        items: 2,
-                    },
-                }
-            })
-        }
-    }
-    testimonialSlider();
-    
-    //------- Mailchimp js --------//  
-
-    function mailChimp(){
-        $('#mc_embed_signup').find('form').ajaxChimp();
-    }
-    mailChimp();
-    
-    /* ===== Parallax Effect===== */
-	
-	function parallaxEffect() {
-    	$('.bg-parallax').parallax();
-	}
-	parallaxEffect();
-    
-    
-    $('select').niceSelect();
-    $('#datetimepicker11,#datetimepicker1').datetimepicker({
-        daysOfWeekDisabled: [0, 6]
+        });
     });
-    
-     /*---------gallery isotope js-----------*/
-    function galleryMasonry(){
-        if ( $('#gallery').length ){
-            $('#gallery').imagesLoaded( function() {
-              // images have loaded
-                // Activate isotope in container
-                $("#gallery").isotope({
-                    itemSelector: ".gallery_item",
-                    layoutMode: 'masonry',
-                    animationOptions: {
-                        duration: 750,
-                        easing: 'linear'
-                    }
-                });
-            })
-        }
-    }
-    galleryMasonry();
-	
-	/*----------------------------------------------------*/
-    /*  Simple LightBox js
-    /*----------------------------------------------------*/
-    $('.imageGallery1 .light').simpleLightbox();
-    
-    /*----------------------------------------------------*/
-    /*  Google map js
-    /*----------------------------------------------------*/
-    
-    if ( $('#mapBox').length ){
-        var $lat = $('#mapBox').data('lat');
-        var $lon = $('#mapBox').data('lon');
-        var $zoom = $('#mapBox').data('zoom');
-        var $marker = $('#mapBox').data('marker');
-        var $info = $('#mapBox').data('info');
-        var $markerLat = $('#mapBox').data('mlat');
-        var $markerLon = $('#mapBox').data('mlon');
-        var map = new GMaps({
-        el: '#mapBox',
-        lat: $lat,
-        lng: $lon,
-        scrollwheel: false,
-        scaleControl: true,
-        streetViewControl: false,
-        panControl: true,
-        disableDoubleClickZoom: true,
-        mapTypeControl: false,
-        zoom: $zoom,
-            styles: [
-                {
-                    "featureType": "water",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "color": "#dcdfe6"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "transit",
-                    "stylers": [
-                        {
-                            "color": "#808080"
-                        },
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.highway",
-                    "elementType": "geometry.stroke",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        },
-                        {
-                            "color": "#dcdfe6"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.highway",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "color": "#ffffff"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.local",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        },
-                        {
-                            "color": "#ffffff"
-                        },
-                        {
-                            "weight": 1.8
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.local",
-                    "elementType": "geometry.stroke",
-                    "stylers": [
-                        {
-                            "color": "#d7d7d7"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "poi",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        },
-                        {
-                            "color": "#ebebeb"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "administrative",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "color": "#a7a7a7"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.arterial",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "color": "#ffffff"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.arterial",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "color": "#ffffff"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        },
-                        {
-                            "color": "#efefef"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road",
-                    "elementType": "labels.text.fill",
-                    "stylers": [
-                        {
-                            "color": "#696969"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "administrative",
-                    "elementType": "labels.text.fill",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        },
-                        {
-                            "color": "#737373"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "poi",
-                    "elementType": "labels.icon",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "poi",
-                    "elementType": "labels",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.arterial",
-                    "elementType": "geometry.stroke",
-                    "stylers": [
-                        {
-                            "color": "#d6d6d6"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road",
-                    "elementType": "labels.icon",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {},
-                {
-                    "featureType": "poi",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "color": "#dadada"
-                        }
-                    ]
-                }
-            ]
+
+    /*==========================*/
+    /* Page Animation */
+    /*==========================*/
+
+    if ($(".animsition").length) {
+        $(".animsition").animsition({
+            inClass: 'zoom-in-sm',
+            outClass: 'zoom-out-sm',
+            inDuration: 1000,
+            outDuration: 1000,
+            linkElement: 'a:not([target="_blank"]):not([href^=#]):not([href^=tel]):not([href^=mailto])',
+            // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+            loading: false,
+            loadingParentElement: 'body',
+            loadingClass: 'animsition-loading',
+            unSupportCss: ['animation-duration',
+                '-webkit-animation-duration',
+                '-o-animation-duration'
+            ],
+            overlay: false,
+
+            overlayClass: 'animsition-overlay-slide',
+            overlayParentElement: 'body'
         });
     }
 
-})(jQuery)
+    /*==========================*/
+    /* Google Map */
+    /*==========================*/
+    if ($('#map-canvas').length != 0) {
+        var map;
+
+        function initialize() {
+            var mapOptions = {
+                zoom: 10,
+                scrollwheel: false,
+                center: new google.maps.LatLng(25.932884, 83.569633),
+                styles: [
+                    {
+                        "stylers": [{hue: "#000000"},
+                            {saturation: -100},
+                            {lightness: -5}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels",
+                        "stylers": [{"visibility": "off"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry",
+                        "stylers": [{"lightness": 100},
+                            {"visibility": "simplified"}]
+                    }
+                ]
+            };
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            var image = 'include/images/map-marker.png';
+            var myLatLng = new google.maps.LatLng(25.932884, 83.569633);
+            var beachMarker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                icon: image
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    }
+
+
+    /*==========================*/
+    /* Scroll to */
+    /*==========================*/
+
+    $('.intro-scroll-down').click(function () {
+        $('html, body').animate({
+            scrollTop: $(".main-container").offset().top - 60
+        }, 500);
+        return false;
+    })
+
+    /*==========================*/
+    /* Sliders */
+    /*==========================*/
+
+
+    $('.recent-projects-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 700,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        touchMove: true
+    });
+    
+    $('.recent-projects-slider2').slick({
+        dots: true,
+        infinite: true,
+        speed: 2000,
+        slidesToShow: 4,
+        adaptiveHeight: true,
+        touchMove: true,
+        autoplay: true,
+        autoplaySpeed: 2000
+    });
+
+    $('.projects-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 1200,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 1400,
+        pauseOnHover: false,
+        touchMove: true,
+        arrows: false
+
+    });
+    
+    $('.feature-slider').slick({
+        autoplay: true,
+        dots: false,
+        infinite: true,
+        speed: 200,
+        slidesToShow: 4,
+        touchMove: true
+    });
+
+
+    $('.slider').slick({
+        autoplay: true,
+        dots: true,
+        infinite: true,
+        speed: 700,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        touchMove: true
+    });
+
+    $('.banner-slider').slick({
+        autoplay: true,
+        dots: true,
+        infinite: true,
+        speed: 700,
+        slidesToShow: 1,
+        adaptiveHeight: false,
+        pauseOnHover: false,
+        autoplaySpeed: 4000
+    });
+
+
+    $('.text-rotator').slick({
+        autoplay: true,
+        dots: true,
+        infinite: true,
+        speed: 700,
+        slidesToShow: 1,
+        adaptiveHeight: false,
+        pauseOnHover: false,
+        autoplaySpeed: 4000
+    });
+
+
+    $('.screen-slider').slick({
+        dots: true,
+        autoplay: true,
+        infinite: true,
+        speed: 700,
+        slidesToShow: 1,
+        adaptiveHeight: true
+    });
+
+
+    /*==========================*/
+    /* Accordion */
+    /*==========================*/
+
+    $('.accordion-panel .panel-title').click(function () {
+        if (!$(this).closest('.accordion-panel').hasClass('open')) {
+
+            $(this).closest('.accordion-container').find('.accordion-panel').removeClass('open');
+            $(this).closest('.accordion-panel').addClass('open');
+            $(this).closest('.accordion-container').find('.accordion-panel .panel-body').stop().slideUp();
+            $(this).closest('.accordion-panel').find('.panel-body').stop().slideDown();
+
+        }
+
+        else {
+            $(this).closest('.accordion-container').find('.accordion-panel').removeClass('open');
+            $(this).closest('.accordion-container').find('.accordion-panel .panel-body').stop().slideUp();
+        }
+    });
+
+});
+
+
+/*==========================*/
+/* Animated Number  */
+/*==========================*/
+$(window).scroll(function () {
+
+    if ($('.stat-box').length) {
+        $('.stat-box').not('.animated').each(function () {
+            if ($(window).scrollTop() >= $(this).offset().top - $(window).height()) {
+                $(this).addClass('animated').find('.timer').countTo({
+                    from: 0
+                });
+            }
+
+        });
+    }
+});
+
+
+/*==========================*/
+/* Mobile Nav */
+/*==========================*/
+if ($(window).width() < 1051) {
+
+    $('nav ul li a').click(function () {
+        $(this).next('ul').toggle();
+        $(this).toggleClass('active');
+
+    });
+}

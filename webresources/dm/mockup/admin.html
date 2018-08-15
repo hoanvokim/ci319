@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HomePage | ISSILOO</title>
+
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+    <!--Roboto Slab Font [ OPTIONAL ] -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,700italic,300,700,500italic,400"
+          rel="stylesheet">
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Jasmine Stylesheet [ REQUIRED ]-->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!--Font Awesome [ OPTIONAL ]-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!--Switchery [ OPTIONAL ]-->
+    <link href="../../plugins/jvectormap/jquery-jvectormap.css" rel="stylesheet">
+
+    <!--Switchery [ OPTIONAL ]-->
+    <link href="../../plugins/switchery/switchery.min.css" rel="stylesheet">
+
+    <!--Bootstrap Datepicker [ OPTIONAL ]-->
+    <link href="../../plugins/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet">
+
+    <!--Morris.js [ OPTIONAL ]-->
+    <link href="../../plugins/jquery-ricksaw-chart/css/rickshaw.css" rel="stylesheet">
+
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <link href="../../plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+
+    <!--Bootstrap Table [ OPTIONAL ]-->
+    <link href="../../plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../../plugins/datatables/extensions/Responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!--Jquery Tag It [ OPTIONAL ]-->
+    <link href="../../plugins/tag-it/jquery.tagit.css" rel="stylesheet">
+
+    <!--Summernote [ OPTIONAL ]-->
+    <link href="../../plugins/summernote/summernote.min.css" rel="stylesheet">
+
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="../css/demo/jasmine.css" rel="stylesheet">
+
+    <!--SCRIPT-->
+    <!--=================================================-->
+
+    <!--Page Load Progress Bar [ OPTIONAL ]-->
+    <link href="../../plugins/pace/pace.min.css" rel="stylesheet">
+    <script src="../../plugins/pace/pace.min.js"></script>
+</head>
+
+<body>
+<div id="container" class="effect mainnav-lg navbar-fixed mainnav-fixed">
+
+    <!--NAVBAR-->
+    <!--===================================================-->
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+
+            <!--Brand logo & name-->
+            <!--================================-->
+            <div class="navbar-header">
+                <a href="admin.html" class="navbar-brand"> <i class="fa fa-cube brand-icon"></i>
+                    <div class="brand-title"><span class="brand-text">Trang Quản Trị</span></div>
+                </a>
+            </div>
+            <!--================================-->
+            <!--End brand logo & name-->
+
+            <!--Navbar Dropdown-->
+            <!--================================-->
+            <div class="navbar-content clearfix">
+                <ul class="nav navbar-top-links pull-left">
+                    <!--Navigation toogle button-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <li class="tgl-menu-btn">
+                        <a class="mainnav-toggle" href="#"> <i class="fa fa-navicon fa-lg"></i> </a>
+                    </li>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End Navigation toogle button-->
+                </ul>
+                <ul class="nav navbar-top-links pull-right">
+                    <!--Language selector-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <li class="dropdown">
+                        <a id="demo-lang-switch" class="lang-selector dropdown-toggle" href="#" data-toggle="dropdown">
+                            <span class="lang-selected"> <img class="lang-flag" src="../img/flags/united-kingdom.png"
+                                                              alt="English"> <span class="lang-id">EN</span> <span
+                                    class="lang-name">English</span> </span>
+                        </a>
+
+                        <!--Language selector menu-->
+                        <ul class="head-list dropdown-menu with-arrow">
+                            <li>
+                                <!--English-->
+                                <a href="#" class="active"> <img class="lang-flag" src="../img/flags/united-kingdom.png"
+                                                                 alt="English"> <span class="lang-id">EN</span> <span
+                                        class="lang-name">English</span> </a>
+                            </li>
+                            <li>
+                                <!--France-->
+                                <a href="#"> <img class="lang-flag" src="../img/flags/france.png" alt="France"> <span
+                                        class="lang-id">FR</span> <span class="lang-name">Fran&ccedil;ais</span> </a>
+                            </li>
+                            <li>
+                                <!--Germany-->
+                                <a href="#"> <img class="lang-flag" src="../img/flags/germany.png" alt="Germany"> <span
+                                        class="lang-id">DE</span> <span class="lang-name">Deutsch</span> </a>
+                            </li>
+                            <li>
+                                <!--Italy-->
+                                <a href="#"> <img class="lang-flag" src="../img/flags/italy.png" alt="Italy"> <span
+                                        class="lang-id">IT</span> <span class="lang-name">Italiano</span> </a>
+                            </li>
+                            <li>
+                                <!--Spain-->
+                                <a href="#"> <img class="lang-flag" src="../img/flags/spain.png" alt="Spain"> <span
+                                        class="lang-id">ES</span> <span class="lang-name">Espa&ntilde;ol</span> </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End language selector-->
+                </ul>
+            </div>
+            <!--================================-->
+            <!--End Navbar Dropdown-->
+
+        </div>
+    </header>
+    <!--===================================================-->
+    <!--END NAVBAR-->
+
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <section id="content-container">
+            <header class="pageheader">
+                <h3><i class="fa fa-home"></i> Dashboard </h3>
+                <div class="breadcrumb-wrapper"><span class="label">You are here:</span>
+                    <ol class="breadcrumb">
+                        <li><a href="#"> Home </a></li>
+                        <li class="active"> Dashboard</li>
+                    </ol>
+                </div>
+            </header>
+
+            <!--Page content-->
+            <!--===================================================-->
+            <div id="page-content">
+                <div class="row">
+                </div>
+            </div>
+            <!--===================================================-->
+            <!--End page content-->
+
+        </section>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+        <!--MAIN NAVIGATION-->
+        <!--===================================================-->
+        <nav id="mainnav-container">
+            <div id="mainnav">
+
+                <!--Menu-->
+                <!--================================-->
+                <div id="mainnav-menu-wrap">
+                    <div class="nano">
+                        <div class="nano-content">
+                            <ul id="mainnav-menu" class="list-group">
+                                <li class="list-header">Tổng quát</li>
+                                <li>
+                                    <a href="admin.html">
+                                        <i class="fa fa-dashboard"></i>
+                                            <span class="menu-title">
+												<strong>Xem tổng quan</strong>
+											</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-info-circle"></i>
+                                        <span class="menu-title">Giới thiệu</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-newspaper-o"></i>
+                                        <span class="menu-title">Tin Tức</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-share-alt"></i>
+                                        <span class="menu-title">Góc chia sẽ</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-question-circle-o"></i>
+                                        <span class="menu-title">Hỏi đáp</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-search"></i>
+                                        <span class="menu-title">Từ khoá tìm kiếm</span>
+                                    </a>
+                                </li>
+                                <li class="list-divider"></li>
+                                <li class="list-header">Du Học</li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-spinner"></i>
+                                        <span class="menu-title">Xem tất cả</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-plus-circle"></i>
+                                        <span class="menu-title">Thêm Category</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-plus-circle"></i>
+                                        <span class="menu-title">Viết bài mới</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-plus-circle"></i>
+                                        <span class="menu-title">Thêm trường đại học</span>
+                                    </a>
+                                </li>
+                                <li class="list-divider"></li>
+                                <li class="list-header">Trung tâm Hàn Ngữ</li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-product-hunt"></i>
+                                        <span class="menu-title">Chương trình đào tạo</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-calendar"></i>
+                                        <span class="menu-title">Thời khoá biểu</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--================================-->
+                <!--End menu-->
+
+            </div>
+        </nav>
+        <!--===================================================-->
+        <!--END MAIN NAVIGATION-->
+
+
+    </div>
+
+    <!-- FOOTER -->
+    <!--===================================================-->
+    <footer id="footer">
+        <!-- Visible when footer positions are static -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="hide-fixed pull-right pad-rgt">Currently v2.2</div>
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <p class="pad-lft">&#0169; 2015 Your Company</p>
+    </footer>
+    <!--===================================================-->
+    <!-- END FOOTER -->
+
+    <!-- SCROLL TOP BUTTON -->
+    <!--===================================================-->
+    <button id="scroll-top" class="btn">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+    <!--===================================================-->
+
+</div>
+<!--===================================================-->
+<!-- END OF CONTAINER -->
+
+
+<!--JAVASCRIPT-->
+<!--=================================================-->
+
+<!--jQuery [ REQUIRED ]-->
+<script src="../js/jquery-2.1.1.min.js"></script>
+
+<!--BootstrapJS [ RECOMMENDED ]-->
+<script src="../js/bootstrap.min.js"></script>
+
+<!--Fast Click [ OPTIONAL ]-->
+<script src="../../plugins/fast-click/fastclick.min.js"></script>
+
+<!--Jasmine Admin [ RECOMMENDED ]-->
+<script src="../js/scripts.js"></script>
+
+<!--Switchery [ OPTIONAL ]-->
+<script src="../../plugins/switchery/switchery.min.js"></script>
+
+<!--Switchery [ OPTIONAL ]-->
+<script src="../../plugins/jquery-count-to/jquery.count-to.js"></script>
+
+<!--Easy Pie Chart [ OPTIONAL ]-->
+<script src="../../plugins/easy-pie-chart/jquery.easypiechart.min.js"></script>
+
+<!--Flot Chart [ OPTIONAL ]-->
+<script src="../../plugins/flot-charts/jquery.flot.min.js"></script>
+<script src="../../plugins/flot-charts/jquery.flot.resize.min.js"></script>
+
+<!--Flot Order Bars Chart [ OPTIONAL ]-->
+<script src="../../plugins/flot-charts/jquery.flot.orderBars.js"></script>
+<script src="../../plugins/flot-charts/jquery.flot.spline.js"></script>
+<script src="../../plugins/flot-charts/jquery.flot.time.js"></script>
+<script src="../../plugins/moment/moment.min.js"></script>
+<script src="../../plugins/moment-range/moment-range.js"></script>
+<script src="../../plugins/flot-charts/jquery.flot.tooltip.min.js"></script>
+
+<!--Morris.js [ OPTIONAL ]-->
+<script src="../../plugins/jquery-ricksaw-chart/js/raphael-min.js"></script>
+<script src="../../plugins/jquery-ricksaw-chart/js/d3.v2.js"></script>
+<script src="../../plugins/jquery-ricksaw-chart/js/rickshaw.min.js"></script>
+
+<!--jvectormap [ OPTIONAL ]-->
+<script src="../../plugins/jvectormap/jquery-jvectormap.min.js"></script>
+<script src="../../plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+<script src="../../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+<!--Bootstrap Select [ OPTIONAL ]-->
+<script src="../../plugins/bootstrap-select/bootstrap-select.min.js"></script>
+
+<!--Bootstrap Datepicker [ OPTIONAL ]-->
+<script src="../../plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+
+<!--DataTables [ OPTIONAL ]-->
+<script src="../../plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="../../plugins/datatables/media/js/dataTables.bootstrap.js"></script>
+<script src="../../plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+
+<!--Skycons [ OPTIONAL ]-->
+<script src="../../plugins/skycons/skycons.min.js"></script>
+
+<!--Demo script [ DEMONSTRATION ]-->
+<script src="../js/demo/jasmine.js"></script>
+
+<!--Demo script [ DEMONSTRATION ]-->
+<script src="../js/demo/homepage-2.js"></script>
+
+</body>
+</html>
