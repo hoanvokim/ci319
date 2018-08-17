@@ -93,4 +93,20 @@ class CI_Controller {
 		return self::$instance;
 	}
 
+    public function is_login()
+    {
+        $user = $this->session->userdata('authenticated_user');
+        return isset($user);
+    }
+
+    public function load_login_view()
+    {
+        $data['title'] = 'Login';
+        $this->load->view('pages/security/login', $data);
+    }
+
+    public function get_authenticated_user()
+    {
+        return $this->session->userdata('authenticated_user');
+    }
 }
