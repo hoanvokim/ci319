@@ -5,66 +5,60 @@
     <div class="slogan-disabled">
         <div class="container jumbotron-v2">
             <div class="row">
-                <span class="tlt animateText"><?php echo $slogan['value'] ?></span>
+                <div class="col-sm-8 col-md-10">
+                    <span class="tlt animateText"><?php echo $slogan['value'] ?></span>
+                </div>
+
+                <div class="col-sm-4 col-md-2">
                 <span class="infoText">
                     Hotline: <a href="tel:0901 879 877"> 0901 879 877</a><br/>
                 </span>
-                <span class="flags">
+                    <span class="flags">
                     <img src="<?php echo base_url() . 'webresources/images/vn.png' ?>"/>
                     <img src="<?php echo base_url() . 'webresources/images/korea.png' ?>"/>
                 </span>
+                </div>
             </div>
         </div>
     </div>
     <!-- slider container start -->
-    <div class="slider-study-abroad-container" style="<?php if (!$sliders || count($sliders) == 0) {
-        echo 'padding-top:0px';
-    } ?>">
-        <?php if ($sliders && count($sliders) > 0) { ?>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <ul class="slider">
-                            <?php foreach ($sliders as $slider) { ?>
-                                <li>
-                                    <a href="<?php echo $slider['url']; ?>"><img
-                                                src="<?php echo base_url() . $slider['img_src']; ?>"
-                                                alt="<?php echo $slider['vi_content']; ?>"></a>
-                                </li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        <?php } ?>
-    </div>
+    <!--    <div class="slider-study-abroad-container" style="--><?php //if (!$sliders || count($sliders) == 0) {
+    //        echo 'padding-top:0px';
+    //    } ?><!--">-->
+    <!--        --><?php //if ($sliders && count($sliders) > 0) { ?>
+    <!--            <div class="container">-->
+    <!--                <div class="row">-->
+    <!--                    <div class="col-sm-12">-->
+    <!--                        <ul class="slider">-->
+    <!--                            --><?php //foreach ($sliders as $slider) { ?>
+    <!--                                <li>-->
+    <!--                                    <a href="--><?php //echo $slider['url']; ?><!--"><img-->
+    <!--                                                src="--><?php //echo base_url() . $slider['img_src']; ?><!--"-->
+    <!--                                                alt="--><?php //echo $slider['vi_content']; ?><!--"></a>-->
+    <!--                                </li>-->
+    <!--                            --><?php //} ?>
+    <!--                        </ul>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        --><?php //} ?>
+    <!--    </div>-->
     <!-- slider container end -->
-    <div class="inner-container" style="margin-top:25px;">
+
+    <div class="inner-container" style="margin-top:35px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 blog_news">
-                    <!-- blog content start -->
-                    <div class="col-md-12 blog_content">
-                        <!-- single news area start -->
-                        <div class="news col-md-6">
-                            <div class="banner-block">
-                                <a href="<?php echo base_url() . $duhochanquoc['slug']; ?>"> <img
-                                            src="<?php echo base_url() . $duhochanquoc['img'] ?>"
-                                            alt="<?php echo $duhochanquoc['vi_name'] ?>"> </a>
-                            </div>
-                        </div>
-                        <!-- single news area end -->
-                        <!-- single news area start -->
-                        <div class="news col-md-6">
-                            <div class="banner-block">
-                                <a href="<?php echo base_url() . $daotaohanngu['slug']; ?>"> <img
-                                            src="<?php echo base_url() . $daotaohanngu['img'] ?>"
-                                            alt="<?php echo $daotaohanngu['vi_name'] ?>"> </a>
-                            </div>
-                        </div>
-                        <!-- single news area end -->
+                <div class="col-md-12">
+                    <div class="col-md-6 col-sm-12 banner-home">
+                        <a href="<?php echo base_url() . $duhochanquoc['slug']; ?>"> <img
+                                    src="<?php echo base_url() . $duhochanquoc['img'] ?>"
+                                    alt="<?php echo $duhochanquoc['vi_name'] ?>"> </a>
                     </div>
-                    <!-- blog content end -->
+                    <div class="col-md-6 col-sm-12 banner-home">
+                        <a href="<?php echo base_url() . $daotaohanngu['slug']; ?>"> <img
+                                    src="<?php echo base_url() . $daotaohanngu['img'] ?>"
+                                    alt="<?php echo $daotaohanngu['vi_name'] ?>"> </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,7 +96,8 @@
         <div class="news-inner-container">
             <div class="container">
                 <a href="<?php echo base_url() . 'cat/tin-tuc-su-kien' ?>"><h3
-                            class="col-header-color"><strong><?php echo $this->lang->line('LASTEST_NEWS'); ?></strong></h3></a>
+                            class="col-header-color"><strong><?php echo $this->lang->line('LASTEST_NEWS'); ?></strong>
+                    </h3></a>
                 <hr class="divider"/>
                 <div class="row mar-20">
                     <div class="col-md-12 blog_news">
@@ -114,12 +109,10 @@
                                     <a href="<?php echo base_url() . 'news/' . $last_news[0]['slug']; ?>"> <img
                                                 src="<?php if (strripos($last_news[0]['img_src'], 'embed/') !== false || strripos($last_news[0]['img_src'], 'watch?v=') !== false) {
                                                     echo getThumbnailFromYoutubeLink($last_news[0]['img_src']);
-                                                }
-                                                else {
+                                                } else {
                                                     if (empty($last_news[0]['img_src'])) {
                                                         echo base_url() . 'webresources/images/banner0.jpg';
-                                                    }
-                                                    else {
+                                                    } else {
                                                         echo base_url() . $last_news[0]['img_src'];
                                                     }
                                                 }
@@ -140,12 +133,10 @@
                                         <a href="<?php echo base_url() . 'news/' . $last_news[$i]['slug']; ?>"> <img
                                                     src="<?php if (strripos($last_news[$i]['img_src'], 'embed/') !== false || strripos($last_news[$i]['img_src'], 'watch?v=') !== false) {
                                                         echo getThumbnailFromYoutubeLink($last_news[$i]['img_src']);
-                                                    }
-                                                    else {
+                                                    } else {
                                                         if (empty($last_news[$i]['img_src'])) {
                                                             echo base_url() . 'webresources/images/banner0.jpg';
-                                                        }
-                                                        else {
+                                                        } else {
                                                             echo base_url() . $last_news[$i]['img_src'];
                                                         }
                                                     }
@@ -167,12 +158,10 @@
                                         <a href="<?php echo base_url() . 'news/' . $last_news[$i]['slug']; ?>"> <img
                                                     src="<?php if (strripos($last_news[$i]['img_src'], 'embed/') !== false || strripos($last_news[$i]['img_src'], 'watch?v=') !== false) {
                                                         echo getThumbnailFromYoutubeLink($last_news[$i]['img_src']);
-                                                    }
-                                                    else {
+                                                    } else {
                                                         if (empty($last_news[$i]['img_src'])) {
                                                             echo base_url() . 'webresources/images/banner0.jpg';
-                                                        }
-                                                        else {
+                                                        } else {
                                                             echo base_url() . $last_news[$i]['img_src'];
                                                         }
                                                     }
@@ -203,7 +192,8 @@
         <div class="news-inner-container">
             <div class="container">
                 <a href="<?php echo base_url() . 'cat/thong-tin-du-hoc' ?>"><h3
-                            class="col-header-color"><strong><?php echo $this->lang->line('STUDYABROAD'); ?></strong></h3></a>
+                            class="col-header-color"><strong><?php echo $this->lang->line('STUDYABROAD'); ?></strong>
+                    </h3></a>
                 <hr class="divider"/>
                 <div class="row mar-20">
                     <div class="col-md-12 blog_news">
@@ -215,12 +205,10 @@
                                     <a href="<?php echo base_url() . 'news/' . $studyabroad_news[0]['slug']; ?>"> <img
                                                 src="<?php if (strripos($studyabroad_news[0]['img_src'], 'embed/') !== false || strripos($studyabroad_news[0]['img_src'], 'watch?v=') !== false) {
                                                     echo getThumbnailFromYoutubeLink($studyabroad_news[0]['img_src']);
-                                                }
-                                                else {
+                                                } else {
                                                     if (empty($studyabroad_news[0]['img_src'])) {
                                                         echo base_url() . 'webresources/images/banner0.jpg';
-                                                    }
-                                                    else {
+                                                    } else {
                                                         echo base_url() . $studyabroad_news[0]['img_src'];
                                                     }
                                                 }
@@ -239,15 +227,14 @@
                                 } ?>
                                 <div class="news col-md-3">
                                     <div class="banner-block">
-                                        <a href="<?php echo base_url() . 'news/' . $studyabroad_news[$i]['slug']; ?>"> <img
+                                        <a href="<?php echo base_url() . 'news/' . $studyabroad_news[$i]['slug']; ?>">
+                                            <img
                                                     src="<?php if (strripos($studyabroad_news[$i]['img_src'], 'embed/') !== false || strripos($studyabroad_news[$i]['img_src'], 'watch?v=') !== false) {
                                                         echo getThumbnailFromYoutubeLink($studyabroad_news[$i]['img_src']);
-                                                    }
-                                                    else {
+                                                    } else {
                                                         if (empty($studyabroad_news[$i]['img_src'])) {
                                                             echo base_url() . 'webresources/images/banner0.jpg';
-                                                        }
-                                                        else {
+                                                        } else {
                                                             echo base_url() . $studyabroad_news[$i]['img_src'];
                                                         }
                                                     }
@@ -281,7 +268,8 @@
         <div class="news-inner-container">
             <div class="container">
                 <a href="<?php echo base_url() . 'cat/cac-truong-dai-hoc' ?>"><h3
-                            class="col-header-color"><strong><?php echo $this->lang->line('UNIVERSITY'); ?></strong></h3></a>
+                            class="col-header-color"><strong><?php echo $this->lang->line('UNIVERSITY'); ?></strong>
+                    </h3></a>
                 <hr class="divider"/>
                 <div class="row mar-20">
                     <div class="col-md-12 blog_news">
@@ -293,12 +281,10 @@
                                     <a href="<?php echo base_url() . 'news/' . $uni_news[0]['slug']; ?>"> <img
                                                 src="<?php if (strripos($uni_news[0]['img_src'], 'embed/') !== false || strripos($uni_news[0]['img_src'], 'watch?v=') !== false) {
                                                     echo getThumbnailFromYoutubeLink($uni_news[0]['img_src']);
-                                                }
-                                                else {
+                                                } else {
                                                     if (empty($uni_news[0]['img_src'])) {
                                                         echo base_url() . 'webresources/images/banner0.jpg';
-                                                    }
-                                                    else {
+                                                    } else {
                                                         echo base_url() . $uni_news[0]['img_src'];
                                                     }
                                                 }
@@ -320,12 +306,10 @@
                                         <a href="<?php echo base_url() . 'news/' . $uni_news[$i]['slug']; ?>"> <img
                                                     src="<?php if (strripos($uni_news[$i]['img_src'], 'embed/') !== false || strripos($uni_news[$i]['img_src'], 'watch?v=') !== false) {
                                                         echo getThumbnailFromYoutubeLink($uni_news[$i]['img_src']);
-                                                    }
-                                                    else {
+                                                    } else {
                                                         if (empty($uni_news[$i]['img_src'])) {
                                                             echo base_url() . 'webresources/images/banner0.jpg';
-                                                        }
-                                                        else {
+                                                        } else {
                                                             echo base_url() . $uni_news[$i]['img_src'];
                                                         }
                                                     }
@@ -368,15 +352,14 @@
                             <!-- single news area start -->
                             <div class="news col-md-6">
                                 <div class="banner-block">
-                                    <a href="<?php echo base_url() . 'news/' . $learning_corner_news[0]['slug']; ?>"> <img
+                                    <a href="<?php echo base_url() . 'news/' . $learning_corner_news[0]['slug']; ?>">
+                                        <img
                                                 src="<?php if (strripos($learning_corner_news[0]['img_src'], 'embed/') !== false || strripos($learning_corner_news[0]['img_src'], 'watch?v=') !== false) {
                                                     echo getThumbnailFromYoutubeLink($learning_corner_news[0]['img_src']);
-                                                }
-                                                else {
+                                                } else {
                                                     if (empty($learning_corner_news[0]['img_src'])) {
                                                         echo base_url() . 'webresources/images/banner0.jpg';
-                                                    }
-                                                    else {
+                                                    } else {
                                                         echo base_url() . $learning_corner_news[0]['img_src'];
                                                     }
                                                 }
@@ -395,15 +378,14 @@
                                 } ?>
                                 <div class="news col-md-3">
                                     <div class="banner-block">
-                                        <a href="<?php echo base_url() . 'news/' . $learning_corner_news[$i]['slug']; ?>"> <img
+                                        <a href="<?php echo base_url() . 'news/' . $learning_corner_news[$i]['slug']; ?>">
+                                            <img
                                                     src="<?php if (strripos($learning_corner_news[$i]['img_src'], 'embed/') !== false || strripos($learning_corner_news[$i]['img_src'], 'watch?v=') !== false) {
                                                         echo getThumbnailFromYoutubeLink($learning_corner_news[$i]['img_src']);
-                                                    }
-                                                    else {
+                                                    } else {
                                                         if (empty($learning_corner_news[$i]['img_src'])) {
                                                             echo base_url() . 'webresources/images/banner0.jpg';
-                                                        }
-                                                        else {
+                                                        } else {
                                                             echo base_url() . $learning_corner_news[$i]['img_src'];
                                                         }
                                                     }

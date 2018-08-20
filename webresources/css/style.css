@@ -375,6 +375,7 @@ header {
 .logo {
     position: relative;
     float: left;
+    padding-left: 15px;
     margin: -5px 0px 0px 0px;
     transition: all .2s ease-out;
     -webkit-transition: all .2s ease-out;
@@ -2558,8 +2559,8 @@ ol {
 @media only screen and (max-width: 1050px) {
     .nav-menu-icon {
         display: block;
-        float: none;
-        margin: 0 auto;
+        float: left;
+        margin: auto 0;
     }
 
     nav {
@@ -2742,7 +2743,7 @@ ol {
 
     .animateText {
         margin-top: -36px !important;
-        font-size: 34px !important;
+        font-size: 30px !important;
     }
 }
 
@@ -2992,8 +2993,8 @@ ol {
         color: #0c4c7b !important;
         position: absolute !important;
         margin-top: -36px !important;
-        width: 39% !important;
-        line-height: 22px !important;
+        width: 55% !important;
+        line-height: 26px !important;
     }
 }
 
@@ -3183,7 +3184,7 @@ hr.divider {
 
 .jumbotron-v2 {
     margin-top: 78px;
-    padding: 50px 50px 20px;
+    padding: 40px 20px 10px;
     outline-offset: -5px;
 }
 
@@ -3193,7 +3194,6 @@ hr.divider {
     color: #0c4c7b;
     position: absolute;
     margin-top: -17px;
-    width: 70%;
     line-height: 37px;
 }
 
@@ -3621,9 +3621,7 @@ html.webkit header div.search-input .btn {
     margin-top: 5px;
     overflow: hidden;
     position: relative;
-}
-
-.banner-block a {
+    text-align: center;
 }
 
 .banner-block a img {
@@ -3632,6 +3630,24 @@ html.webkit header div.search-input .btn {
 }
 
 .banner-block:hover a img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.banner-home {
+    margin-top: 5px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.banner-home a img {
+    transform: scale(1);
+    transition-duration: 0.4s;
+    height: 340px;
+}
+
+.banner-home:hover a img {
     opacity: 1;
     transform: scale(1.05);
 }
@@ -3737,3 +3753,6 @@ html.webkit header div.search-input .btn {
     opacity: 1;
     transform: scale(1.05);
 }
+
+
+.blog_content
