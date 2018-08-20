@@ -20,6 +20,7 @@ conf/ide
 
 # general excludes
 node_modules
+assets
 yarn-error.log
 tmp
 out
