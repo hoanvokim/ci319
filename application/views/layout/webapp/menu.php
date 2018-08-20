@@ -2,14 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
+
+                <div class="nav-menu-icon"><a href="#"><i></i></a></div>
                 <div class="logo"><a href="<?php echo base_url(); ?>" class="animsition-link"><img
                                 src="<?php echo base_url(); ?>webresources/images/logo-line-white.png"
                                 alt="ISSILOO"/></a></div>
-
-
-                <div class="nav-menu-icon"><a href="#"><i></i></a></div>
-
-
                 <nav class="fixed-collapse-navbar">
                     <ul class="menu nav navbar-nav navbar-right">
                         <li><a class="active"
