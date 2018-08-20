@@ -4,6 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-12">
+                    <h5 style="text-transform: capitalize; text-align: center;">Kết nối cùng ISSILOO</h5>
                     <h5><a href="#"><img src="<?php echo base_url(); ?>webresources/images/logo-line-white-2.png"
                                          alt="ISSILOO"
                                          class="footer-logo"/></a></h5>
@@ -59,57 +60,7 @@
                 <div class="col-md-5 col-sm-12">
                     <h4 style="padding-left: 55px;"><?php echo $this->lang->line('REGISTER'); ?></h4>
 
-                    <p class="message <?php echo $status; ?>"><?php if ($status == 'error') {
-                            echo $this->lang->line('MESSAGE_ERROR');
-                        } elseif ($status == 'success') {
-                            echo $this->lang->line('CONTACT_SUCCESS');
-                        } else {
-                            echo '';
-                        } ?></p>
 
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <form class="contact-form" id="ContactForm" method="post"
-                                  action="<?php echo base_url(); ?>">
-                                <!--contact form-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <input type="text" name="consult_name" class="form-control"
-                                                       placeholder="<?php echo $this->lang->line('NAME'); ?> *"
-                                                       required="required">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="email" name="consult_email" class="form-control"
-                                                       placeholder="<?php echo $this->lang->line('EMAIL'); ?> *"
-                                                       required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" name="consult_phone" class="form-control"
-                                                       placeholder="<?php echo $this->lang->line('PHONE'); ?> *">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                        <textarea class="form-control" name="consult_content" rows="10"
-                                                  placeholder="<?php echo $this->lang->line('CONTENT'); ?> *"
-                                                  required="required"></textarea>
-                                            </div>
-                                            <input type="submit" value="<?php echo $this->lang->line('SEND'); ?>"
-                                                   name="btn_consult_send" class="btn btn-primary"/>
-                                        </div>
-                                    </div>
-                            </form>
-                            <!--end contact form-->
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

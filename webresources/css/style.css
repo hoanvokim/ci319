@@ -2198,27 +2198,27 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 .btn-default {
-    color: #f1412e;
+    color: #2e4c95;
     background-color: transparent;
-    border-color: #f1412e;
+    border-color: #2e4c95;
 }
 
 .btn-default:hover, .btn-default:focus, .btn-default:active {
     color: #fff;
-    background-color: #f1412e;
-    border-color: #f1412e !important;
+    background-color: #2e4c95;
+    border-color: #2e4c95 !important;
 }
 
 .btn-primary {
     color: #f6f6f6;
-    background-color: #f1412e;
-    border-color: #f1412e;
+    background-color: #2e4c95;
+    border-color: #2e4c95;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    color: #f1412e;
+    color: #2e4c95;
     background-color: #f6f6f6;
-    border-color: #f1412e;
+    border-color: #2e4c95;
 }
 
 .btn + .btn {
@@ -3448,6 +3448,10 @@ html.webkit header div.search-input .btn {
 }
 
 /* ---------- Feature CSS --------- */
+.feature-even {
+    background-color: aliceblue;
+}
+
 .feature_tag {
     display: inline-block;
     border-radius: 50%;
@@ -3644,7 +3648,6 @@ html.webkit header div.search-input .btn {
 .banner-home a img {
     transform: scale(1);
     transition-duration: 0.4s;
-    height: 340px;
 }
 
 .banner-home:hover a img {
@@ -3753,6 +3756,5 @@ html.webkit header div.search-input .btn {
     opacity: 1;
     transform: scale(1.05);
 }
-
 
 .blog_content
